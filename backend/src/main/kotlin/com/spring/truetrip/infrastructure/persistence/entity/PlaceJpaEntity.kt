@@ -23,7 +23,13 @@ class PlaceJpaEntity(
     var description: String? = null,
 
     @Column(name = "namu_wiki_url")
-    var namuWikiUrl: String? = null
+    var namuWikiUrl: String? = null,
+
+    @Column(nullable = false)
+    var category: String = "SPOT",
+
+    @Column(name = "image_url", length = 1000)
+    var imageUrl: String? = null
 ) {
     fun toDomain(): Place {
         return Place(
@@ -32,7 +38,9 @@ class PlaceJpaEntity(
             latitude = this.latitude,
             longitude = this.longitude,
             description = this.description,
-            namuWikiUrl = this.namuWikiUrl
+            namuWikiUrl = this.namuWikiUrl,
+            category = this.category,
+            imageUrl = this.imageUrl
         )
     }
 
@@ -44,7 +52,9 @@ class PlaceJpaEntity(
                 latitude = place.latitude,
                 longitude = place.longitude,
                 description = place.description,
-                namuWikiUrl = place.namuWikiUrl
+                namuWikiUrl = place.namuWikiUrl,
+                category = place.category,
+                imageUrl = place.imageUrl
             )
         }
     }

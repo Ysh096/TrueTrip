@@ -2,6 +2,7 @@ package com.spring.truetrip.infrastructure.persistence
 
 import com.spring.truetrip.application.port.out.LoadPlacePort
 import com.spring.truetrip.domain.model.Place
+import com.spring.truetrip.infrastructure.external.google.GoogleMapsAdapter
 import com.spring.truetrip.infrastructure.persistence.repository.PlaceRepository
 import org.springframework.stereotype.Component
 

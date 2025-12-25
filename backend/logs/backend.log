@@ -2,8 +2,10 @@
 > Task :processResources UP-TO-DATE
 
 > Task :compileKotlin
-w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/spring/truetrip/service/OpenAIService.kt:65:62 Unchecked cast of 'Any?' to 'Map<String, String>'.
-w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/spring/truetrip/service/OpenAIService.kt:65:62 Unchecked cast of 'Any?' to 'Map<String, String>'.
+w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/spring/truetrip/infrastructure/external/openai/OpenAIAdapter.kt:80:51 Unchecked cast of 'Any?' to 'List<Map<String, Any>>'.
+w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/spring/truetrip/infrastructure/external/openai/OpenAIAdapter.kt:82:58 Unchecked cast of 'Any?' to 'List<Map<String, Any>>'.
+w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/spring/truetrip/infrastructure/external/openai/OpenAIAdapter.kt:175:51 Unchecked cast of 'Any?' to 'List<Map<String, Any>>'.
+w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/spring/truetrip/infrastructure/external/openai/OpenAIAdapter.kt:177:58 Unchecked cast of 'Any?' to 'List<Map<String, Any>>'.
 
 > Task :compileJava NO-SOURCE
 > Task :classes UP-TO-DATE
@@ -20,22 +22,22 @@ w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/
 
  :: Spring Boot ::                (v4.0.1)
 
-2025-12-26T00:34:45.458+09:00  INFO 78623 --- [TrueTrip] [           main] c.spring.truetrip.TrueTripApplicationKt  : Starting TrueTripApplicationKt using Java 21.0.6 with PID 78623 (/Users/seonghoyu/Desktop/develop/TrueTrip/backend/build/classes/kotlin/main started by seonghoyu in /Users/seonghoyu/Desktop/develop/TrueTrip/backend)
-2025-12-26T00:34:45.459+09:00  INFO 78623 --- [TrueTrip] [           main] c.spring.truetrip.TrueTripApplicationKt  : The following 1 profile is active: "secret"
-2025-12-26T00:34:45.640+09:00  INFO 78623 --- [TrueTrip] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-26T00:34:45.657+09:00  INFO 78623 --- [TrueTrip] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 4 JPA repository interfaces.
-2025-12-26T00:34:45.794+09:00  INFO 78623 --- [TrueTrip] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2025-12-26T00:34:45.799+09:00  INFO 78623 --- [TrueTrip] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-26T00:34:45.799+09:00  INFO 78623 --- [TrueTrip] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
-2025-12-26T00:34:45.813+09:00  INFO 78623 --- [TrueTrip] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 338 ms
-2025-12-26T00:34:45.859+09:00  INFO 78623 --- [TrueTrip] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
-2025-12-26T00:34:45.880+09:00  INFO 78623 --- [TrueTrip] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
-2025-12-26T00:34:46.028+09:00  INFO 78623 --- [TrueTrip] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-26T00:34:46.039+09:00  INFO 78623 --- [TrueTrip] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-26T00:34:46.093+09:00  INFO 78623 --- [TrueTrip] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:truetrip user=SA
-2025-12-26T00:34:46.094+09:00  INFO 78623 --- [TrueTrip] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-26T00:34:46.102+09:00  WARN 78623 --- [TrueTrip] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-26T00:34:46.109+09:00  INFO 78623 --- [TrueTrip] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-12-26T02:53:07.646+09:00  INFO 82903 --- [TrueTrip] [           main] c.spring.truetrip.TrueTripApplicationKt  : Starting TrueTripApplicationKt using Java 21.0.6 with PID 82903 (/Users/seonghoyu/Desktop/develop/TrueTrip/backend/build/classes/kotlin/main started by seonghoyu in /Users/seonghoyu/Desktop/develop/TrueTrip/backend)
+2025-12-26T02:53:07.647+09:00  INFO 82903 --- [TrueTrip] [           main] c.spring.truetrip.TrueTripApplicationKt  : The following 1 profile is active: "secret"
+2025-12-26T02:53:07.828+09:00  INFO 82903 --- [TrueTrip] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-26T02:53:07.846+09:00  INFO 82903 --- [TrueTrip] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 4 JPA repository interfaces.
+2025-12-26T02:53:07.977+09:00  INFO 82903 --- [TrueTrip] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2025-12-26T02:53:07.981+09:00  INFO 82903 --- [TrueTrip] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-26T02:53:07.981+09:00  INFO 82903 --- [TrueTrip] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2025-12-26T02:53:07.995+09:00  INFO 82903 --- [TrueTrip] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 332 ms
+2025-12-26T02:53:08.043+09:00  INFO 82903 --- [TrueTrip] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2025-12-26T02:53:08.058+09:00  INFO 82903 --- [TrueTrip] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.0.Final
+2025-12-26T02:53:08.187+09:00  INFO 82903 --- [TrueTrip] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-26T02:53:08.197+09:00  INFO 82903 --- [TrueTrip] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-26T02:53:08.248+09:00  INFO 82903 --- [TrueTrip] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:truetrip user=SA
+2025-12-26T02:53:08.248+09:00  INFO 82903 --- [TrueTrip] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-26T02:53:08.255+09:00  WARN 82903 --- [TrueTrip] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-26T02:53:08.262+09:00  INFO 82903 --- [TrueTrip] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [jdbc:h2:mem:truetrip]
 	Database driver: H2 JDBC Driver
 	Database dialect: H2Dialect
@@ -47,7 +49,7 @@ w: file:///Users/seonghoyu/Desktop/develop/TrueTrip/backend/src/main/kotlin/com/
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-12-26T00:34:46.404+09:00  INFO 78623 --- [TrueTrip] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-26T02:53:08.550+09:00  INFO 82903 --- [TrueTrip] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     create table itineraries (
         id bigint generated by default as identity,
@@ -73,14 +75,14 @@ Hibernate:
         end_date date,
         start_date date,
         title varchar(255) not null,
-        user_id bigint not null,
+        user_id bigint,
         primary key (id)
     )
 Hibernate: 
     create table users (
         id bigint generated by default as identity,
         email varchar(255) not null,
-        nickname varchar(255) not null,
+        name varchar(255) not null,
         primary key (id)
     )
 Hibernate: 
@@ -104,16 +106,16 @@ Hibernate:
        add constraint FK8wb14dx6ed0bpp3planbay88u 
        foreign key (user_id) 
        references users
-2025-12-26T00:34:46.428+09:00  INFO 78623 --- [TrueTrip] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-26T00:34:46.532+09:00  INFO 78623 --- [TrueTrip] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-12-26T00:34:46.762+09:00  WARN 78623 --- [TrueTrip] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-26T00:34:46.868+09:00  INFO 78623 --- [TrueTrip] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2025-12-26T00:34:46.870+09:00  INFO 78623 --- [TrueTrip] [           main] c.spring.truetrip.TrueTripApplicationKt  : Started TrueTripApplicationKt in 1.53 seconds (process running for 1.643)
+2025-12-26T02:53:08.579+09:00  INFO 82903 --- [TrueTrip] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-26T02:53:08.683+09:00  INFO 82903 --- [TrueTrip] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-26T02:53:08.984+09:00  WARN 82903 --- [TrueTrip] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-26T02:53:09.169+09:00  INFO 82903 --- [TrueTrip] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2025-12-26T02:53:09.172+09:00  INFO 82903 --- [TrueTrip] [           main] c.spring.truetrip.TrueTripApplicationKt  : Started TrueTripApplicationKt in 1.641 seconds (process running for 1.76)
 Hibernate: 
     select
         count(*) 
     from
-        places p1_0
+        places pje1_0
 Hibernate: 
     insert 
     into
@@ -150,3 +152,190 @@ Hibernate:
     values
         (?, ?, ?, ?, ?, default)
 ✅ Sample places initialized.
+2025-12-26T02:53:12.456+09:00  INFO 82903 --- [TrueTrip] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-26T02:53:12.456+09:00  INFO 82903 --- [TrueTrip] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-26T02:53:12.457+09:00  INFO 82903 --- [TrueTrip] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-26T02:54:43.995+09:00  INFO 82903 --- [TrueTrip] [nio-8080-exec-1] c.s.t.i.external.openai.OpenAIAdapter    : OpenAI Response: {id=resp_05415cb11e0ca53b00694d7a08a4d08194b7b186a7c406b944, object=response, created_at=1766685192, status=completed, background=false, billing={payer=developer}, completed_at=1766685283, error=null, incomplete_details=null, instructions=You are a helpful travel assistant that outputs only JSON., max_output_tokens=null, max_tool_calls=null, model=gpt-5-mini-2025-08-07, output=[{id=rs_05415cb11e0ca53b00694d7a0924948194a59f586176cfe143, type=reasoning, summary=[]}, {id=msg_05415cb11e0ca53b00694d7a4ff4908194b13b29c622bb5b14, type=message, status=completed, content=[{type=output_text, annotations=[], logprobs=[], text=[
+  {
+    "name": "Gwangjang Market",
+    "description": "Historic large traditional market known for a dense concentration of street-food stalls and traditional Korean eateries (bindaetteok, mayak gimbap, sundae).",
+    "reason": "Iconic food market in central Seoul offering a wide variety of authentic Korean street foods; excellent for public-transport access and sampling many items in one visit.",
+    "isFamous": true,
+    "wikiKeyword": "Gwangjang Market",
+    "latitude": 37.570395,
+    "longitude": 127.009179
+  },
+  {
+    "name": "Namdaemun Market",
+    "description": "One of Korea's oldest and largest traditional markets with numerous food stalls, noodle shops, and snack vendors.",
+    "reason": "Major historic market area with abundant street food and inexpensive local dishes; easily reachable by subway and bus.",
+    "isFamous": true,
+    "wikiKeyword": "Namdaemun Market",
+    "latitude": 37.559017,
+    "longitude": 126.977021
+  },
+  {
+    "name": "Noryangjin Fisheries Wholesale Market",
+    "description": "Large wholesale fish market where visitors can buy fresh seafood and have it prepared at on-site restaurants.",
+    "reason": "Top destination for fresh seafood and sashimi experiences in Seoul; excellent for seafood-focused itineraries using public transit.",
+    "isFamous": true,
+    "wikiKeyword": "Noryangjin Fisheries Wholesale Market",
+    "latitude": 37.512542,
+    "longitude": 126.941033
+  },
+  {
+    "name": "Dongdaemun Market",
+    "description": "Extensive shopping district with daytime and late-night markets; numerous street-food vendors and local eateries in the area.",
+    "reason": "Vibrant evening street-food scene and numerous local restaurants near wholesale shopping zones — easy to visit by public transport.",
+    "isFamous": true,
+    "wikiKeyword": "Dongdaemun Market",
+    "latitude": 37.566317,
+    "longitude": 127.009536
+  },
+  {
+    "name": "COEX Mall",
+    "description": "Large underground shopping mall with extensive dining floors and a variety of international and Korean restaurants and food courts.",
+    "reason": "One-stop indoor destination for many food styles and budgets; good during inclement weather and well connected by subway.",
+    "isFamous": true,
+    "wikiKeyword": "COEX Mall",
+    "latitude": 37.512014,
+    "longitude": 127.058642
+  },
+  {
+    "name": "Myeongdong",
+    "description": "Major shopping and tourism district renowned for its abundant street-food stalls, snack stands, and quick-eat restaurants.",
+    "reason": "High-density street-food lanes and snack vendors; great for sampling popular Korean street foods while exploring shops.",
+    "isFamous": true,
+    "wikiKeyword": "Myeongdong",
+    "latitude": 37.562053,
+    "longitude": 126.985037
+  },
+  {
+    "name": "Garak Market",
+    "description": "Large agricultural and marine products wholesale market serving Seoul, with many vendors and restaurants using fresh produce and seafood.",
+    "reason": "One of Seoul's biggest wholesale markets for produce and seafood — ideal for those interested in market-to-table experiences.",
+    "isFamous": true,
+    "wikiKeyword": "Garak Market",
+    "latitude": 37.488417,
+    "longitude": 127.118122
+  },
+  {
+    "name": "Bukchon Hanok Village",
+    "description": "Historic neighborhood of traditional hanok houses; the area contains numerous tea houses, traditional snack shops, and hanok cafés.",
+    "reason": "Cultural area that pairs well with traditional Korean tea and snack experiences; iconic tourist area accessible by public transport.",
+    "isFamous": true,
+    "wikiKeyword": "Bukchon Hanok Village",
+    "latitude": 37.582600,
+    "longitude": 126.983000
+  },
+  {
+    "name": "Myeongdong Kyoja",
+    "description": "Long-established restaurant famous for knife-cut kalguksu (noodle soup) and mandu in the Myeongdong area.",
+    "reason": "Classic, highly recommended spot for experiencing beloved Korean comfort food with easy public-transit access.",
+    "isFamous": false,
+    "latitude": 37.561735,
+    "longitude": 126.986033
+  },
+  {
+    "name": "Tosokchon Samgyetang",
+    "description": "Well-known restaurant specializing in samgyetang (ginseng chicken soup) near Gyeongbokgung Palace.",
+    "reason": "Popular place for a traditional, restorative Korean dish; commonly paired with palace sightseeing via public transit.",
+    "isFamous": false,
+    "latitude": 37.582312,
+    "longitude": 126.976920
+  },
+  {
+    "name": "Tongin Market",
+    "description": "Traditional market where visitors can use a token-based lunchbox system to sample multiple small dishes from vendors.",
+    "reason": "Unique interactive market experience focused on food sampling and local specialties; easy to reach by subway and bus.",
+    "isFamous": false,
+    "latitude": 37.579809,
+    "longitude": 126.973571
+  },
+  {
+    "name": "Ikseon-dong Hanok Village",
+    "description": "Revitalized hanok neighborhood filled with boutique cafés, dessert shops, and modern Korean eateries.",
+    "reason": "Compact area ideal for café-hopping and trying contemporary takes on Korean snacks and desserts; walkable and transit-friendly.",
+    "isFamous": false,
+    "latitude": 37.572185,
+    "longitude": 126.986013
+  },
+  {
+    "name": "Hongdae",
+    "description": "Youthful neighborhood around Hongik University known for lively street-food stalls, themed cafés, and late-night eateries.",
+    "reason": "Great area for trendy street foods, casual dining, and late-night snacks accessible by public transport.",
+    "isFamous": false,
+    "latitude": 37.556262,
+    "longitude": 126.922000
+  },
+  {
+    "name": "Garosu-gil",
+    "description": "Tree-lined street in Sinsa-dong known for stylish cafés, bakeries, and mid-range restaurants popular with locals and visitors.",
+    "reason": "Good for café culture and dessert exploration in Gangnam; easily accessible by subway and buses.",
+    "isFamous": false,
+    "latitude": 37.517636,
+    "longitude": 127.021475
+  },
+  {
+    "name": "Majang Meat Market",
+    "description": "Large wholesale and retail meat market with numerous nearby restaurants specializing in grilled meat and butchery-fresh purchases.",
+    "reason": "Top destination for meat-lovers wanting fresh cuts and nearby barbecued meat restaurants; reachable by public transit.",
+    "isFamous": false,
+    "latitude": 37.577241,
+    "longitude": 127.043102
+  },
+  {
+    "name": "Bangsan Market",
+    "description": "Specialty market supplying baking ingredients, utensils, and packaged goods — many small bakeries and street vendors nearby.",
+    "reason": "Excellent for those interested in Korean baking supplies, pastries, and local wholesale-to-retail food supply culture.",
+    "isFamous": false,
+    "latitude": 37.571426,
+    "longitude": 126.984856
+  },
+  {
+    "name": "Jungsik",
+    "description": "Contemporary Korean fine-dining restaurant (modern haute Korean cuisine) located in the Gangnam/Cheongdam area.",
+    "reason": "Highly regarded restaurant for modern interpretations of Korean flavors; good option for a special meal accessible via public transit.",
+    "isFamous": false,
+    "latitude": 37.518050,
+    "longitude": 127.041042
+  },
+  {
+    "name": "Balwoo Gongyang",
+    "description": "Restaurant serving traditional Korean temple cuisine near Jogyesa and Insadong.",
+    "reason": "Unique opportunity to taste refined, vegetarian temple cuisine rooted in Korean tradition; close to cultural sightseeing by public transport.",
+    "isFamous": false,
+    "latitude": 37.574694,
+    "longitude": 126.985120
+  },
+  {
+    "name": "Gwangjang Market Bindaetteok Alley",
+    "description": "Cluster within Gwangjang Market where several vendors sell bindaetteok (mung-bean pancakes) and related street snacks.",
+    "reason": "Recommended as a targeted stop inside Gwangjang Market for sampling a signature local street food specialty.",
+    "isFamous": false,
+    "latitude": 37.570960,
+    "longitude": 127.009485
+  }
+]}], role=assistant}], parallel_tool_calls=true, previous_response_id=null, prompt_cache_key=null, prompt_cache_retention=null, reasoning={effort=medium, summary=null}, safety_identifier=null, service_tier=default, store=true, temperature=1.0, text={format={type=text}, verbosity=medium}, tool_choice=auto, tools=[], top_logprobs=0, top_p=1.0, truncation=disabled, usage={input_tokens=310, input_tokens_details={cached_tokens=0}, output_tokens=6793, output_tokens_details={reasoning_tokens=4864}, total_tokens=7103}, user=null, metadata={}}
+2025-12-26T02:54:45.135+09:00  INFO 82903 --- [TrueTrip] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-26T02:54:45.138+09:00  INFO 82903 --- [TrueTrip] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2025-12-26T02:54:45.140+09:00  INFO 82903 --- [TrueTrip] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-26T02:54:45.141+09:00  INFO 82903 --- [TrueTrip] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-26T02:54:45.141+09:00  INFO 82903 --- [TrueTrip] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+> Task :bootRun FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/Users/seonghoyu/.sdkman/candidates/java/21.0.6-librca/bin/java'' finished with non-zero exit value 143
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1m 39s
+4 actionable tasks: 3 executed, 1 up-to-date

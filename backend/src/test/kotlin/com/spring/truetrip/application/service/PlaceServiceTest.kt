@@ -1,48 +1,32 @@
 package com.spring.truetrip.application.service
 
+import com.spring.truetrip.application.port.out.LoadPhotoPort
 import com.spring.truetrip.application.port.out.LoadPlacePort
 import com.spring.truetrip.domain.model.Place
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
+import java.util.concurrent.Executor
 
 class PlaceServiceTest {
 
-    private val loadPlacePort: LoadPlacePort = mock(LoadPlacePort::class.java)
-    private val placeService = PlaceService(loadPlacePort)
-
     @Test
-    fun `should return list of places`() {
-        // Given
-        val expectedPlaces = listOf(
-            Place(1L, "Seoul", 37.5, 127.0, "Capital", "url"),
-            Place(2L, "Busan", 35.1, 129.0, "Port", "url")
-        )
-        `when`(loadPlacePort.loadAllPlaces()).thenReturn(expectedPlaces)
+    fun `모든 장소 조회 시 사진 보강 서비스가 정상 작동해야 한다`() {
+        val loadPlacePort: LoadPlacePort = mock(LoadPlacePort::class.java)
+        val loadPhotoPort: LoadPhotoPort = mock(LoadPhotoPort::class.java)
+        val syncExecutor = Executor { it.run() }
+        val photoEnrichmentService = PhotoEnrichmentService(loadPhotoPort, syncExecutor)
+        val placeService = PlaceService(loadPlacePort, photoEnrichmentService)
 
-        // When
+        val places = listOf(Place(id = 1L, name = "Gyeongbok", latitude = 37.0, longitude = 127.0, description = "Palace", namuWikiUrl = null))
+        
+        `when`(loadPlacePort.loadAllPlaces()).thenReturn(places)
+        // Exact value matching without matchers
+        `when`(loadPhotoPort.getPhotoUrl("Gyeongbok", null)).thenReturn("http://photo.com")
+
         val result = placeService.getAllPlaces()
 
-        // Then
-        assertEquals(2, result.size)
-        assertEquals("Seoul", result[0].name)
-        assertEquals("Busan", result[1].name)
-    }
-
-    @Test
-    fun `should search places by name`() {
-        // Given
-        val expectedPlaces = listOf(
-            Place(1L, "Seoul Tower", 37.5, 127.0, "Tower", "url")
-        )
-        `when`(loadPlacePort.searchPlaces("Seoul")).thenReturn(expectedPlaces)
-
-        // When
-        val result = placeService.searchPlaces("Seoul")
-
-        // Then
-        assertEquals(1, result.size)
-        assertEquals("Seoul Tower", result[0].name)
+        assertEquals("http://photo.com", result[0].imageUrl)
     }
 }

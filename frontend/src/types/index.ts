@@ -6,13 +6,19 @@ export interface RecommendationRequest {
   themes: string[];
   groupSize: number;
   userLocale: string;
+  travelMethod: 'PUBLIC' | 'RENT';
 }
 
-export interface RecommendationResponse {
+export interface Recommendation {
   name: string;
   description: string;
   reason: string;
-  namuWikiUrl?: string;
+  namuWikiUrl: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  category?: 'SPOT' | 'ACCOMMODATION';
+  imageUrl?: string | null;
+  displayName?: string | null;
 }
 
 export interface ItineraryRequest {
@@ -37,6 +43,11 @@ export interface ItineraryPlace {
   name: string;
   timeSlot: string;
   activity: string;
+  latitude: number | null;
+  longitude: number | null;
+  category?: 'SPOT' | 'ACCOMMODATION';
+  imageUrl?: string | null;
+  displayName?: string | null;
 }
 
 export interface ApiResponse<T> {

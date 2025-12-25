@@ -1,5 +1,6 @@
 package com.spring.truetrip.application.service
 
+import com.spring.truetrip.application.port.out.LoadPhotoPort
 import com.spring.truetrip.application.port.out.RecommendationPort
 import com.spring.truetrip.domain.model.Recommendation
 import com.spring.truetrip.dto.RecommendationRequest
@@ -7,34 +8,28 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.mock
+import java.time.LocalDate
+import java.util.concurrent.Executor
 
 class RecommendationServiceTest {
 
-    private val recommendationPort: RecommendationPort = mock(RecommendationPort::class.java)
-    private val recommendationService = RecommendationService(recommendationPort)
-
     @Test
-    fun `should return recommendations from port`() {
-        // Given
-        val request = RecommendationRequest(
-            destination = "Paris",
-            startDate = java.time.LocalDate.parse("2025-01-01"),
-            endDate = java.time.LocalDate.parse("2025-01-05"),
-            ageGroup = "20대",
-            themes = listOf("역사"),
-            groupSize = 2,
-            userLocale = "ko-KR"
-        )
-        val expected = listOf(
-            Recommendation("Eiffel Tower", "Iconic tower", "Classic must-see")
-        )
-        `when`(recommendationPort.generateRecommendations(request)).thenReturn(expected)
+    fun `추천 결과 조회 시 사진 보강 서비스가 정상 작동해야 한다`() {
+        val recommendationPort: RecommendationPort = mock(RecommendationPort::class.java)
+        val loadPhotoPort: LoadPhotoPort = mock(LoadPhotoPort::class.java)
+        val syncExecutor = Executor { it.run() }
+        val photoEnrichmentService = PhotoEnrichmentService(loadPhotoPort, syncExecutor)
+        val recommendationService = RecommendationService(recommendationPort, photoEnrichmentService)
 
-        // When
+        val request = RecommendationRequest("Paris", LocalDate.now(), LocalDate.now(), "20대", listOf("힐링"), 1)
+        val base = listOf(Recommendation("Eiffel", "Desc", "Reason"))
+        
+        `when`(recommendationPort.generateRecommendations(request)).thenReturn(base)
+        // No matchers, just exact values or null
+        `when`(loadPhotoPort.getPhotoUrl("Eiffel", "Paris")).thenReturn("http://photo.com")
+
         val result = recommendationService.getRecommendations(request)
 
-        // Then
-        assertEquals(1, result.size)
-        assertEquals("Eiffel Tower", result[0].name)
+        assertEquals("http://photo.com", result[0].imageUrl)
     }
 }

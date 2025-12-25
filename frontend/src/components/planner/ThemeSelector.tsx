@@ -11,23 +11,27 @@ const THEMES = ['🍰 식도락', '🏰 역사/문화', '🌿 자연/힐링', '�
 
 export const ThemeSelector = ({ selectedThemes, onToggle }: ThemeSelectorProps) => {
   return (
-    <div className="space-y-3 md:col-span-2">
-      <label className="text-sm font-bold text-slate-700 uppercase tracking-wider">
-        여행 스타일 <span className="text-slate-400 font-normal normal-case">(복수 선택 가능)</span>
+    <div className="space-y-4 md:col-span-2">
+      <label className="text-sm font-bold text-slate-600 ml-1 block">
+        어떤 스타일의 여행을 원하시나요? <span className="text-slate-300 font-medium normal-case ml-2">(중복 선택 가능)</span>
       </label>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2">
         {THEMES.map((theme) => {
           const isSelected = selectedThemes.includes(theme);
           return (
-            <Button
+            <button
               key={theme}
               type="button"
-              variant={isSelected ? 'primary' : 'outline'}
               onClick={() => onToggle(theme)}
-              className="px-5 py-3 text-sm"
+              className={`
+                px-4 py-2 rounded-xl text-xs font-bold transition-all duration-200 border
+                ${isSelected 
+                  ? 'bg-blue-600 border-blue-600 text-white shadow-md scale-[1.02]' 
+                  : 'bg-white border-slate-100 text-slate-500 hover:border-blue-200 hover:text-blue-500'}
+              `}
             >
-              {theme} {isSelected && '✓'}
-            </Button>
+              {theme}
+            </button>
           );
         })}
       </div>

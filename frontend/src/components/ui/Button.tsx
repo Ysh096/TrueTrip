@@ -15,13 +15,13 @@ export const Button = ({
   disabled, 
   ...props 
 }: ButtonProps) => {
-  const baseStyles = "px-6 py-3 rounded-xl font-bold transition-all transform active:scale-95 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none";
+  const baseStyles = "btn-premium relative px-8 py-4 rounded-2xl font-black transition-all duration-500 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none tracking-tight overflow-hidden";
   
   const variants = {
-    primary: "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-200 hover:from-emerald-600 hover:to-teal-600",
-    secondary: "bg-emerald-100 text-emerald-700 hover:bg-emerald-200",
-    outline: "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-emerald-300",
-    ghost: "text-slate-500 hover:text-emerald-600 hover:bg-emerald-50"
+    primary: "bg-[#2563eb] text-white shadow-[0_20px_40px_-12px_rgba(37,99,235,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(37,99,235,0.45)] hover:-translate-y-1",
+    secondary: "bg-blue-50/80 backdrop-blur-sm text-blue-700 hover:bg-blue-100/90 hover:text-blue-800",
+    outline: "bg-white/50 backdrop-blur-md border-2 border-slate-100 text-slate-600 hover:border-blue-500/30 hover:text-blue-600 hover:bg-white",
+    ghost: "text-slate-400 hover:text-blue-600 hover:bg-blue-50/50"
   };
 
   return (
@@ -30,13 +30,16 @@ export const Button = ({
       disabled={disabled || isLoading}
       {...props}
     >
+      {/* Shine Effect */}
+      <span className="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shine_1.5s_infinite] pointer-events-none" />
+      
       {isLoading && (
         <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
       )}
-      {children}
+      <span className="relative z-10">{children}</span>
     </button>
   );
 };

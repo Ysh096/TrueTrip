@@ -2,18 +2,18 @@ import React from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'emerald' | 'slate';
+  variant?: 'blue' | 'slate';
   className?: string;
 }
 
-export const Badge = ({ children, variant = 'emerald', className = '' }: BadgeProps) => {
+export const Badge = ({ children, variant = 'blue', className = '' }: BadgeProps) => {
   const variants = {
-    emerald: "bg-emerald-50 text-emerald-600 border-emerald-100",
-    slate: "bg-slate-50 text-slate-600 border-slate-200"
+    blue: "bg-blue-50/50 text-blue-600 border-blue-100/50 shadow-sm",
+    slate: "bg-slate-50/50 text-slate-500 border-slate-100/50 shadow-sm"
   };
 
   return (
-    <span className={`text-sm font-medium px-3 py-1 rounded-full border ${variants[variant]} ${className}`}>
+    <span className={`text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-xl border backdrop-blur-sm transition-all hover:scale-105 ${variants[variant]} ${className}`}>
       {children}
     </span>
   );

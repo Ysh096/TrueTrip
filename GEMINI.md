@@ -39,7 +39,10 @@
 ### Frontend (Next.js/TypeScript)
 - **App Router:** `src/app` 구조 및 Server/Client Component의 명확한 분리.
 - **Tailwind CSS v4:** 새로운 `@import "tailwindcss";` 방식 및 모던 유틸리티 사용.
-- **Component Design:** 비즈니스 로직(lib/api)과 UI(components)의 엄격한 분리.
+- **CSS Management:** CSS는 `globals.css` 및 공통 스타일 클래스를 통해 적극적으로 공통화하여 사용합니다.
+- **UX-First Design:** 모든 디자인 결정은 사용자의 편의성과 사용성(Usability)을 최우선으로 고려합니다.
+- **Clean Componentization:** 프론트엔드 코드는 읽기 쉽도록 적절히 컴포넌트화하며, Tailwind CSS 속성이 너무 비대해지지 않도록 시맨틱 클래스나 컴포넌트 추출을 활용합니다.
+- **Component Design:** 비즈니스 로직(lib/api, hooks)과 UI(components)의 엄격한 분리.
 
 ## ⚠️ 4. Critical Constraints & Caution
 

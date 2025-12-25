@@ -9,5 +9,6 @@ data class RecommendationRequest(
     val ageGroup: String,
     val themes: List<String>,
     val groupSize: Int,
-    val userLocale: String = "ko-KR"
+    val userLocale: String = "ko-KR",
+    val travelMethod: String = "PUBLIC" // "PUBLIC" or "RENT"
 )

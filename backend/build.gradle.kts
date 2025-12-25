@@ -23,6 +23,10 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation("org.springframework.boot:spring-boot-starter-aop:3.4.1")
+    implementation("org.springframework.retry:spring-retry:2.0.11")
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
     // runtimeOnly("com.mysql:mysql-connector-j")
     runtimeOnly("com.h2database:h2")
     implementation("com.fasterxml.jackson.core:jackson-databind")

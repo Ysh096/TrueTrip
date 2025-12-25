@@ -7,8 +7,9 @@ interface CardProps {
 }
 
 export const Card = ({ children, className = '', hover = false }: CardProps) => {
+  const baseClass = hover ? 'surface-card cursor-pointer hover:shadow-md' : 'surface-card';
   return (
-    <div className={`bg-white border border-slate-100 p-8 rounded-3xl shadow-xl shadow-slate-100/50 transition-all ${hover ? 'hover:shadow-2xl hover:shadow-emerald-100/50' : ''} ${className}`}>
+    <div className={`${baseClass} ${className}`}>
       {children}
     </div>
   );

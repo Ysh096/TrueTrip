@@ -6,5 +6,7 @@ data class Place(
     val latitude: Double,
     val longitude: Double,
     val description: String?,
-    val namuWikiUrl: String?
+    val namuWikiUrl: String?,
+    val category: String = "SPOT",
+    val imageUrl: String? = null
 )
