@@ -1,4 +1,4 @@
-import { ApiResponse, RecommendationRequest, RecommendationResponse } from "@/types";
+import { ApiResponse, RecommendationRequest, RecommendationResponse, ItineraryRequest, ItineraryPlanResponse } from "@/types";
 
 const API_BASE_URL = 'http://localhost:8080/api';
 
@@ -24,6 +24,33 @@ export async function fetchRecommendations(formData: Omit<RecommendationRequest,
   
   if (result.status !== 'success' || !result.data) {
     throw new Error(result.message || 'Failed to fetch recommendations');
+  }
+
+  return result.data;
+}
+
+export async function planItinerary(request: Omit<ItineraryRequest, 'userLocale'>): Promise<ItineraryPlanResponse> {
+  const requestBody: ItineraryRequest = {
+    ...request,
+    userLocale: navigator.language || 'ko-KR',
+  };
+
+  const response = await fetch(`${API_BASE_URL}/recommendations/plan`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (!response.ok) {
+    throw new Error('Failed to plan itinerary');
+  }
+
+  const result: ApiResponse<ItineraryPlanResponse> = await response.json();
+
+  if (result.status !== 'success' || !result.data) {
+    throw new Error(result.message || 'Failed to plan itinerary');
   }
 
   return result.data;

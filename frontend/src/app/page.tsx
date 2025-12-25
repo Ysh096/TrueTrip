@@ -8,10 +8,12 @@ import { RecommendationResponse } from '@/types';
 export default function PlannerPage() {
   const [recommendations, setRecommendations] = useState<RecommendationResponse[]>([]);
   const [destination, setDestination] = useState<string>('');
+  const [dates, setDates] = useState({ startDate: '', endDate: '' });
 
-  const handleSuccess = (data: RecommendationResponse[], dest: string) => {
+  const handleSuccess = (data: RecommendationResponse[], dest: string, start: string, end: string) => {
     setRecommendations(data);
     setDestination(dest);
+    setDates({ startDate: start, endDate: end });
   };
 
   const handleError = (error: string) => {
@@ -44,7 +46,12 @@ export default function PlannerPage() {
 
         {/* Result Display */}
         {recommendations.length > 0 && (
-          <RecommendationList destination={destination} items={recommendations} />
+          <RecommendationList 
+            destination={destination} 
+            items={recommendations} 
+            startDate={dates.startDate}
+            endDate={dates.endDate}
+          />
         )}
       </div>
     </main>

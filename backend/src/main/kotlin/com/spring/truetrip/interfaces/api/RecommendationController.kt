@@ -2,12 +2,8 @@ package com.spring.truetrip.interfaces.api
 
 import com.spring.truetrip.application.service.RecommendationService
 import com.spring.truetrip.common.ApiResponse
-import com.spring.truetrip.dto.RecommendationRequest
-import com.spring.truetrip.dto.RecommendationResponse
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import com.spring.truetrip.dto.*
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/recommendations")
@@ -23,10 +19,17 @@ class RecommendationController(
             RecommendationResponse(
                 name = it.name,
                 description = it.description,
-                reason = it.reason
+                reason = it.reason,
+                namuWikiUrl = it.namuWikiUrl
             )
         }
         
         return ApiResponse.success(responseDtos)
+    }
+
+    @PostMapping("/plan")
+    fun planItinerary(@RequestBody request: ItineraryRequest): ApiResponse<ItineraryPlanResponse> {
+        val plan = recommendationService.planItinerary(request)
+        return ApiResponse.success(plan)
     }
 }

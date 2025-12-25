@@ -9,7 +9,7 @@ import { Card } from '@/components/ui/Card';
 import { ThemeSelector } from './ThemeSelector';
 
 interface PlannerFormProps {
-  onSuccess: (data: RecommendationResponse[], destination: string) => void;
+  onSuccess: (data: RecommendationResponse[], destination: string, startDate: string, endDate: string) => void;
   onError: (error: string) => void;
 }
 
@@ -41,7 +41,7 @@ export default function PlannerForm({ onSuccess, onError }: PlannerFormProps) {
 
     try {
       const data = await fetchRecommendations(formData);
-      onSuccess(data, formData.destination);
+      onSuccess(data, formData.destination, formData.startDate, formData.endDate);
     } catch (error) {
       onError(error instanceof Error ? error.message : String(error));
     } finally {
